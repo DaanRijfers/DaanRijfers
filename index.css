@@ -1,0 +1,225 @@
+@font-face {
+    font-family: "webfont";
+    src: url(./fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+body {
+    font-family: "webfont";
+    background-color: black; /* Witte achtergrond voor een zwart-witthema */
+    color: white; /* Zwarte tekst voor contrast */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem; /* Iets kleiner formaat voor meer elegantie */
+    color: white; /* Zwarte kopkleur voor contrast */
+    margin-bottom: 20px; /* Minder ruimte onder titels voor een compactere look */
+}
+
+p {
+    font-size: 1.1rem; /* Iets kleinere lettergrootte voor betere leesbaarheid */
+    margin-bottom: 15px; /* Minder ruimte tussen alinea's voor een compactere look */
+}
+
+a {
+    color: white; /* Zwarte tekst voor links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button {
+    background-color: #000000; /* Zwarte achtergrond voor knoppen */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem; /* Iets kleinere lettergrootte voor knoppen */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #333333; /* Donkergrijze achtergrond bij hover voor visueel effect */
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.nav-list ul li{
+    list-style: none;
+}
+
+.nav_link:hover {
+    color: purple;
+}
+.nav_link {
+    position: relative;
+    transition: all 0.4s;
+}
+
+.nav_link::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: purple;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    opacity: 0;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+
+.nav_link:hover::after {
+    opacity: 1;
+}
+
+.localTime {
+    height: 100px;
+    width: 100px;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+.voorPagina {
+    margin-top: 200px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlight span{
+    color: purple;
+    font-weight: bolder;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.fontType span{
+    font-style:italic;
+    font-weight: 600;
+    color: purple;
+}
+
+.voorPagina p{
+    font-size: 40px;
+}
+
+.skill-list {
+    display: flex;
+}
+
+.skill-list span {
+    font-size: 30px;
+}
+
+.skill-list .text {
+    position: relative;
+    color: purple;
+}
+
+.skill-list .text.item0 {
+    color: white;
+    margin-right: 10px;
+}
+
+.text.item1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-left: 2px solid purple;
+    animation: animateText 4s steps(12) infinite;
+}
+
+@keyframes animateText {
+    40%, 60%{
+        left: 100%;
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+
+.backGround {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 
+    0 0 0 10px #4fc3dc44, 
+    0 0 50px #4fc3dc,
+    0 0 100px #4fc3dc;
+    animation: animateDots 15s linear infinite;
+    animation-duration: calc(150s / var(--i));
+}
+
+.bubbles span:nth-child(even) {
+    background: #ff2d75;
+    box-shadow: 
+    0 0 0 10px #ff2d75, 
+    0 0 50px #ff2d75,
+    0 0 100px #ff2d75;
+}
+
+@keyframes animateDots {
+    0%
+    {
+       transform: translateY(100vh) scale(0); 
+    }
+    100%
+    {
+       transform: translateY(-10vh) scale(1); 
+    }
+}
