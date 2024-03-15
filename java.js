@@ -32,22 +32,22 @@ const textLoad = () => {
     }, 12000);
     setTimeout(() => {
         text.textContent = "Periode 2";
-    }, 18000); // Verhoogd naar 18000ms voor een soepelere overgang
+    }, 16000); // Verhoogd naar 18000ms voor een soepelere overgang
     setTimeout(() => {
         text.textContent = "Database Engineering";
-    }, 22000); // Verhoogd naar 22000ms voor een soepelere overgang
+    }, 20000); // Verhoogd naar 22000ms voor een soepelere overgang
     setTimeout(() => {
         text.textContent = "Project Database Application Management";
-    }, 26000); // Verhoogd naar 26000ms voor een soepelere overgang
+    }, 24000); // Verhoogd naar 26000ms voor een soepelere overgang
     setTimeout(() => {
         text.textContent = "Periode 3";
-    }, 32000); // Verhoogd naar 32000ms voor een soepelere overgang
+    }, 28000); // Verhoogd naar 32000ms voor een soepelere overgang
     setTimeout(() => {
         text.textContent = "Object Georienteerd Programmeren 1";
-    }, 36000); // Verhoogd naar 36000ms voor een soepelere overgang
+    }, 32000); // Verhoogd naar 36000ms voor een soepelere overgang
     setTimeout(() => {
         text.textContent = "Project Battle Bot";
-    }, 40000); // Verhoogd naar 40000ms voor een soepelere overgang
+    }, 36000); // Verhoogd naar 40000ms voor een soepelere overgang
 }
 
 textLoad();
