@@ -10,7 +10,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-
+    line-height: 1.5;
+    font-size:  clamp(1.125, 2vw, 1.25rem);
 }
 
 h1 {
@@ -28,6 +29,10 @@ a {
     color: white; /* Zwarte tekst voor links */
     text-decoration: none;
     font-weight: bold;
+}
+
+ul {
+    padding: 0;
 }
 
 .button {
@@ -49,20 +54,21 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 100%;
 }
 
 .nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 100%;
 }
 
 header {
     padding: 20px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     background-color: black;
     position: fixed;
     top: 0;
@@ -71,10 +77,16 @@ header {
     z-index: 9999;
 }
 
+.nav-list {
+    display: flex;
+    align-items: center;
+}
+
 .nav ul li {
     display: inline-block;
     margin-right: 20px;
     text-decoration: none;
+    padding: 0;
 }
 
 .nav-list ul li{
@@ -115,12 +127,12 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 100%;
 }
 
 .voorPagina {
-    margin-top: 200px;
-    width: 100vw;
+    margin-top: 300px;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -143,11 +155,6 @@ header {
 .voorPagina p{
     font-size: 40px;
 }
-
-.skill-list {
-    display: flex;
-}
-
 .skill-list span {
     font-size: 30px;
 }
@@ -162,7 +169,6 @@ header {
     margin-right: 10px;
     z-index: -1;
 }
-
 .text.item1::before {
     content: "";
     position: absolute;
@@ -172,7 +178,7 @@ header {
     width: 100%;
     background-color: black;
     border-left: 2px solid purple;
-    animation: animateText 4s steps(12) infinite;
+    animation: animateText 4s infinite;
 }
 
 @keyframes animateText {
@@ -184,59 +190,15 @@ header {
     }
 }
 
-.backGround {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-
-.bubbles {
-    position: relative;
-    display: flex;
-}
-
-.bubbles span {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background: #4fc3dc;
-    margin: 0 4px;
-    border-radius: 50%;
-    box-shadow: 
-    0 0 0 10px #4fc3dc44, 
-    0 0 50px #4fc3dc,
-    0 0 100px #4fc3dc;
-    animation: animateDots 15s linear infinite;
-    animation-duration: calc(400s / var(--i));
-}
-
-.bubbles span:nth-child(even) {
-    background: #ff2d75;
-    box-shadow: 
-    0 0 0 10px #ff2d75, 
-    0 0 50px #ff2d75,
-    0 0 100px #ff2d75;
-}
-
-@keyframes animateDots {
-    0%
-    {
-       transform: translateY(100vh) scale(0); 
-    }
-    100%
-    {
-       transform: translateY(-10vh) scale(1); 
-    }
-}
-
 .profile-container {
+    margin-top: 300px;
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100vh;
 }
 .about_me {
-    width: 1000px;
+    width: 1300px;
 }
 .about_me_title {
     display: flex;
@@ -248,7 +210,59 @@ header {
     font-size: 50px;
 }
 .line {
-    width: 800px;
-    height: 2px;
+    width: 100%;
+    height: 1px;
     background-color: white;
+    margin-top: 150px;
+}
+.bibleText {
+    margin-top: 20px;
+}
+.bibleText h1{
+    font-size: 25px;
+    font-weight: 200;
+}
+section .blob_section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+section 
+.blob {
+    position: absolute;
+    right: 10px;
+    top: -200px;
+    width: 500px;
+    height: 500px;
+}
+.bio {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    align-items: center;
+    margin-top: 300px;
+}
+
+.bioText {
+    flex: 1;
+}
+
+.bioFoto img {
+    width: 400px;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.reveal.active {
+    transform: translateY(0px);
+    opacity: 1;
 }

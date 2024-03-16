@@ -13,6 +13,18 @@ function displayClock() {
         hrs = 24;
     }
 
+    if(hrs < 10) {
+        hrs = '0' + hrs;
+    }
+
+    if(min < 10) {
+        min = '0' + min;
+    }
+
+    if(sec < 10) {
+        sec = '0' + sec;
+    }
+
     document.getElementById('clock').innerHTML = hrs + ':' + min + ":" + sec;
 }
 
@@ -20,34 +32,43 @@ function displayClock() {
 
 const text = document.querySelector(".item1");
 
+const textContents = [
+    { content: "Web Development", delay: 4000 },
+    { content: "Project Web Development & Design", delay: 4000 },
+    { content: "Database Engineering", delay: 4000 },
+    { content: "Project Database Application Management", delay: 4000 },
+    { content: "Object Georienteerd Programmeren 1", delay: 4000 },
+    { content: "Project Battle Bot", delay: 4000 }
+];
+
 const textLoad = () => {
-    setTimeout(() => {
-        text.textContent = "Periode 1";
-    }, 4000);
-    setTimeout(() => {
-        text.textContent = "Web Development";
-    }, 8000);
-    setTimeout(() => {
-        text.textContent = "Project Web Development & Design";
-    }, 12000);
-    setTimeout(() => {
-        text.textContent = "Periode 2";
-    }, 16000); // Verhoogd naar 18000ms voor een soepelere overgang
-    setTimeout(() => {
-        text.textContent = "Database Engineering";
-    }, 20000); // Verhoogd naar 22000ms voor een soepelere overgang
-    setTimeout(() => {
-        text.textContent = "Project Database Application Management";
-    }, 24000); // Verhoogd naar 26000ms voor een soepelere overgang
-    setTimeout(() => {
-        text.textContent = "Periode 3";
-    }, 28000); // Verhoogd naar 32000ms voor een soepelere overgang
-    setTimeout(() => {
-        text.textContent = "Object Georienteerd Programmeren 1";
-    }, 32000); // Verhoogd naar 36000ms voor een soepelere overgang
-    setTimeout(() => {
-        text.textContent = "Project Battle Bot";
-    }, 36000); // Verhoogd naar 40000ms voor een soepelere overgang
-}
+    let currentIndex = 0;
+    const updateText = () => {
+        text.textContent = textContents[currentIndex].content;
+        currentIndex = (currentIndex + 1) % textContents.length;
+        setTimeout(updateText, textContents[currentIndex].delay);
+    };
+    updateText();
+};
 
 textLoad();
+
+
+window.addEventListener('scroll', reveal);
+
+function reveal() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    for (var i = 0; i < reveals.length; i++) {
+
+        var windowHeight = window.innerHeight;
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 150;
+
+        if (revealTop < windowHeight - revealPoint) {
+            reveals[i].classList.add('active');
+        } else {
+            reveals[i].classList.remove('active');
+        }
+    }
+}
