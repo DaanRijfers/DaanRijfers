@@ -22,7 +22,8 @@ h1 {
 
 p {
     font-size: 1.1rem; /* Iets kleinere lettergrootte voor betere leesbaarheid */
-    margin-bottom: 15px; /* Minder ruimte tussen alinea's voor een compactere look */
+    margin: 5px;
+
 }
 
 a {
@@ -130,20 +131,55 @@ header {
     width: 100%;
 }
 
+.voorPagina_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+}
+
 .voorPagina {
-    margin-top: 300px;
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
-.highlight span{
+.voorPaginaText {
+    width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.voorPaginaText p {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.highlight span {
     color: purple;
     font-weight: bolder;
     font-size: 50px;
-    font-weight: 600;
+}
+
+.skill-list {
+    margin-top: 50px;
+}
+
+.skill-list .text.item1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    border-left: 2px solid purple;
+    animation: animateText 4s infinite;
 }
 
 .fontType span{
@@ -169,17 +205,6 @@ header {
     margin-right: 10px;
     z-index: -1;
 }
-.text.item1::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    border-left: 2px solid purple;
-    animation: animateText 4s infinite;
-}
 
 @keyframes animateText {
     40%, 60%{
@@ -191,7 +216,7 @@ header {
 }
 
 .profile-container {
-    margin-top: 300px;
+    margin-top: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,7 +267,7 @@ section
     flex-direction: row;
     gap: 100px;
     align-items: center;
-    margin-top: 300px;
+    margin-top: 100px;
 }
 
 .bioText {
